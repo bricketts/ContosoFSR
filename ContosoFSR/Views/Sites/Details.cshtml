@@ -1,0 +1,60 @@
+﻿@model ContosoFSR.Models.Site
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Site</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyPower)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyPower)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Generator)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Generator)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Programs)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Programs)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
