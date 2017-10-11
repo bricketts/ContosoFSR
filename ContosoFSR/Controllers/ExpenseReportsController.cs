@@ -23,9 +23,13 @@ namespace ContosoFSR.Controllers
         // GET: ExpenseReports
         public async Task<IActionResult> Index()
         {
-
-
-            return View(await _context.ExpenseReport.ToListAsync());
+            ViewData["MonthlyReceived"] = MonthlyAmountReceived(_context.ExpenseReport);
+            ViewData["YearlyReceived"] = YearlyAmountReceived(_context.ExpenseReport);
+            ViewData["TotalReceived"] = TotalAmountReceived(_context.ExpenseReport);
+            var UserReports = await _context.ExpenseReport
+                .Where(t => t.UserName == User.Identity.Name)
+                .ToListAsync();
+            return View(UserReports);
         }
 
         // GET: ExpenseReports/Details/5

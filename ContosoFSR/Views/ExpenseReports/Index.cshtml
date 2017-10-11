@@ -4,7 +4,25 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Expense Reports</h2>
+
+<div class="container-fluid">
+    <div class="col-md-4">
+        <div class="well well-sm">
+            <h2 class="text-center">Montly Income <br> $@ViewData["MonthlyReceived"]</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="well well-sm">
+            <h2 class="text-center">Yearly Income <br> $@ViewData["YearlyReceived"]</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="well well-sm">
+            <h2 class="text-center">Total Income <br> $@ViewData["TotalReceived"]</h2>
+        </div>
+    </div>
+</div>
 
 <p>
     <a asp-action="Create">Create New</a>
