@@ -4,10 +4,12 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
+<div class="col-lg-12">
+    <h2>Details</h2>
     <h4>Site</h4>
+</div>
+
+<div class="col-lg-6">    
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -53,8 +55,17 @@
             @Html.DisplayFor(model => model.Note)
         </dd>
     </dl>
+    <div class="col-lg-6">
+        <a asp-action="Edit" asp-route-id="@Model.ID" class="btn bg-primary">Edit</a>
+        <a asp-action="Index" class=" btn btn-default">Back to Sites</a>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn bg-primary">Edit</a>
-    <a asp-action="Index" class=" btn btn-default">Back to List</a>
-</div>
+<div class="col-lg-6">
+    <hr/>
+    <iframe 
+            width="600"
+            height="450" if; border-radius: 10px; background-color: lightgray;"
+            src="@ViewData["SiteMapUrl"]">
+    </iframe>
+    </div>
+

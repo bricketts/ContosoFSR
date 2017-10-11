@@ -24,5 +24,7 @@ namespace ContosoFSR.Data
         }
 
         public DbSet<ContosoFSR.Models.Site> Site { get; set; }
+
+        public DbSet<ContosoFSR.Models.ExpenseReport> ExpenseReport { get; set; }
     }
 }

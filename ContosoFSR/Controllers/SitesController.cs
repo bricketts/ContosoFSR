@@ -19,6 +19,7 @@ namespace ContosoFSR.Controllers
             _context = context;
         }
 
+        #region MVC Methods
         // GET: Sites
         public async Task<IActionResult> Index()
         {
@@ -39,6 +40,8 @@ namespace ContosoFSR.Controllers
             {
                 return NotFound();
             }
+
+            ViewData["SiteMapUrl"] = GetMapUrl(site);
 
             return View(site);
         }
@@ -148,6 +151,16 @@ namespace ContosoFSR.Controllers
         private bool SiteExists(int id)
         {
             return _context.Site.Any(e => e.ID == id);
+        }
+        #endregion
+
+        public string GetMapUrl(Site site)
+        {
+            string url = "https://www.google.com/maps/embed/v1/place" +
+                   "?key=AIzaSyBlLFsYw1BOKboMMiIAhvfwowbFI-xxq20" +
+                   "&q=" + site.Latitude.ToString() + "," + site.Longitude.ToString();
+
+            return url;
         }
     }
 }
