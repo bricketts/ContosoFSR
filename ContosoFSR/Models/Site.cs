@@ -39,6 +39,7 @@ namespace ContosoFSR.Models
         [DisplayFormat(NullDisplayText = "No Emergency Power")]
         public Generator? Generator { get; set; }
         [Required]
+        [Display(Name = "Program")]
         public Programs Programs { get; set; }
         public string Note { get; set; }
     }
