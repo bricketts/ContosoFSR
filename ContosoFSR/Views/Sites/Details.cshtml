@@ -5,11 +5,10 @@
 }
 
 <div class="col-lg-12">
-    <h2>Site @Model.Name Details</h2>
+    <h2>@Model.Name Details</h2>
 </div>
-
-<div class="col-lg-6">    
-    <hr />
+<hr/>
+<div class="col-lg-6">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
@@ -54,17 +53,15 @@
             @Html.DisplayFor(model => model.Note)
         </dd>
     </dl>
+    
     <div class="col-lg-6">
         <a asp-action="Edit" asp-route-id="@Model.ID" class="btn bg-primary">Edit</a>
         <a asp-action="Index" class=" btn btn-default">Back to Sites</a>
-    </div>
+    </div>    
 </div>
-<div class="col-lg-6">
-    <hr/>
-    <iframe 
-            width="600"
-            height="450" if; style="border-radius: 10px; background-color: lightgray;"
-            src="@ViewData["SiteMapUrl"]">
-    </iframe>
-    </div>
+<div class="col-lg-6 intrinsic-container intrinsic-container-16x9">
+    <iframe src="@ViewData["SiteMapUrl"]"></iframe>
+</div>
+
+
 
